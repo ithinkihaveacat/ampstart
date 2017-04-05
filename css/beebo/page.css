@@ -15,7 +15,7 @@
  */
 
 /*
- * `gulp build` creates dist/css/beebo/page.css from this file.
+ * `gulp postcss` creates dist/css/beebo/page.css from this file.
  */
 
 @import '../core';
