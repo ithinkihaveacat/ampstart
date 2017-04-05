@@ -1,5 +1,5 @@
 /**
- * Copyright 2017 The AMP Start Authors. All Rights Reserved.
+ * Copyright 2017 Michael Stillwell. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,14 +35,70 @@
 @import 'page-vars';
 
 html {
-  font-size: 22px; /* 1rem anywhere is equal to this */
+  font-size: var(--base-size); /* 1rem anywhere is equal to this */
+}
+
+body {
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures contextual;
+  font-variant-numeric: oldstyle-nums proportional-nums;
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  line-height: 1.5; /* unitless line height is preferred https://developer.mozilla.org/en/docs/Web/CSS/line-height */
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  color: var(--color-font-accent);
+  letter-spacing: normal;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+h1, .h1 {
+  text-transform: none;
+  line-height: var(--line-height-5);
+}
+
+h2, .h2 {
+  line-height: var(--line-height-4);
+}
+
+h3, .h3 {
+  line-height: var(--line-height-3);
+}
+
+h4, .h4 {
+  line-height: var(--line-height-2);
+}
+
+h5, .h5 {
+  line-height: var(--line-height-1);
+}
+
+h6, .h6 {
+  line-height: var(--line-height-1);
 }
 
 a {
   text-decoration-skip: ink;
 }
 
-.hr {
+time {
+  font-variant: small-caps;
+  text-transform: lowercase;
+  color: var(--color-grey);
+}
+
+div.hr {
+  color: var(--color-grey);
   font-feature-settings: 'dlig';
   font-size: 3rem;
+}
+
+div.hr span::before {
+  content: '-.-';
+}
+
+.ampstart-headerbar {
+  box-shadow: 0 0 15px 5px rgba(0,0,0,.5);
+  border-bottom-right-radius: 10px;
 }

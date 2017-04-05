@@ -15,5 +15,29 @@
  */
 
 :root {
+
+  /* css/ampstart-base/base-page-vars.css */
+
   --font-family: Vollkorn, "Georgia", serif;
+
+  --content-max-width: 600px;
+
+  --color-font-accent: #dc322f;
+
+  /* css/ampstart-base/bass-override-vars.css */
+
+  --h1: 2.5rem;
+  --h2: 1.8rem;
+  --h3: 1.125rem;
+  --h4: .875rem;
+  --h5: .75rem;
+  --h6: .6rem;
+
+  /* components/navbar/navbar-vars.css */
+
+  --navbar-height: 5em;
+
+  /* Other */
+
+  --base-size: 20px;
 }
