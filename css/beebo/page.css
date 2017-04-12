@@ -160,9 +160,9 @@ blockquote {
 }
 
 @media (--breakpoint-lg) {
-  .lg-mx-auto {
-    display: flex;
-    justify-content: center;
+  header.masthead.lg-mx-auto {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
@@ -170,9 +170,9 @@ blockquote {
   .ampstart-headerbar {
     border-bottom-left-radius: 10px;
   }
-  .md-mx-auto {
-    display: flex;
-    justify-content: center;
+  header.masthead.md-mx-auto {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
 
