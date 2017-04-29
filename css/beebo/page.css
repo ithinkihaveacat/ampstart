@@ -90,7 +90,7 @@ time {
 
 div.hr {
   color: var(--color-grey);
-  font-feature-settings: 'dlig';
+  font-feature-settings: "dlig" 1;
   font-size: 3rem;
 }
 
