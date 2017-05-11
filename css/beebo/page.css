@@ -159,6 +159,10 @@ blockquote {
   font-feature-settings: "dlig" 1;
 }
 
+body.smackerels h2 > a {
+  text-decoration: none;
+}
+
 @media (--breakpoint-lg) {
   header.masthead.lg-mx-auto {
     left: 50%;
