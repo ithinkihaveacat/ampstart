@@ -117,6 +117,10 @@ div.hr span::before {
   left: 0;
 }
 
+.ampstart-pullquote {
+  font-size: inherit;
+}
+
 #sidebar {
   font-family: var(--font-system);
   font-weight: bold;
@@ -183,4 +187,9 @@ blockquote {
 }
 
 @media (--breakpoint-xs) {
+  .ampstart-pullquote {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
 }
