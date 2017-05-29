@@ -117,6 +117,15 @@ div.hr span::before {
   left: 0;
 }
 
+.ampstart-btn {
+  font-family: var(--font-system);
+  font-weight: bold;
+}
+
+.ampstart-btn-secondary {
+  color: var(--color-grey);
+}
+
 .ampstart-pullquote {
   font-size: inherit;
 }
