@@ -88,6 +88,9 @@ time {
   color: var(--color-grey);
 }
 
+blockquote {
+  font-feature-settings: "dlig" 1;
+}
 
 .sm-caps {
   font-variant: small-caps;
@@ -171,10 +174,6 @@ header.masthead .logo a {
   font-style: italic;
   font-weight: 700;
   text-decoration: none;
-}
-
-blockquote {
-  font-feature-settings: "dlig" 1;
 }
 
 @media (--breakpoint-lg) {
