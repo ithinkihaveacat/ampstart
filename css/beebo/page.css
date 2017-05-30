@@ -88,6 +88,11 @@ time {
   color: var(--color-grey);
 }
 
+
+.sm-caps {
+  font-variant: small-caps;
+}
+
 div.hr {
   color: var(--color-grey);
   font-feature-settings: "dlig" 1;
