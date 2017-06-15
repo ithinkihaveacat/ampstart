@@ -1,0 +1,15 @@
+{
+  "name": "amptimizer",
+  "version": "0.0.1",
+  "description": "AMP Optimizer",
+  "main": "index.js",
+  "author": "Michael Stillwell <stillers@google.com>",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "amphtml-validator": "^1.0.20",
+    "cheerio": "^1.0.0-rc.1",
+    "eslint": "^4.0.0",
+    "eslint-config-google": "^0.8.0",
+    "firebase-tools": "^3.9.1"
+  }
+}
