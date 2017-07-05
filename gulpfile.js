@@ -25,9 +25,10 @@ const through = require('through2');
 const fs = require('fs');
 const path = require('path');
 const config = require('./tasks/config');
+const server = require('gulp-webserver');
 require('./tasks');
 
-const partialsMap = Object.create(null);
+let partialsMap = {};
 
 function getData(opt_path) {
   var path = 'data.json';
@@ -44,10 +45,19 @@ function mustacheStream() {
       cb(null, file);
       return;
     }
-    var partials = getPartials(partialsMap,
-        path.dirname(file.path), file.contents.toString());
-    file.contents = new Buffer(Mustache.render(file.contents.toString(),
-        getData(file.path), partials));
+
+    var partials = getPartials(
+      partialsMap,
+      path.dirname(file.path),
+      file.contents.toString()
+    );
+
+    let fileContents = Mustache.render(file.contents.toString(),
+      getData(file.path), partials);
+
+    // Replaces [[[title]]] to {{title}} which allows the use of amp-mustache.
+    fileContents = fileContents.replace(/<%/g, "{{").replace(/%>/g, "}}");
+    file.contents = new Buffer(fileContents);
     cb(null, file);
   });
 }
@@ -81,6 +91,8 @@ gulp.task('build', 'build', function(cb) {
 });
 
 gulp.task('clean', function() {
+  // Clears partials map so changes to components are rebuilt in watch task.
+  partialsMap = {};
   return del(['dist']);
 });
 
@@ -170,23 +182,13 @@ gulp.task('postcss', 'build postcss files', function() {
     .pipe(gulp.dest(config.dest.css))
 });
 
-function serve() {
-  var app = require('express')();
-  var webserver = require('gulp-webserver');
-
-  var host = 'localhost';
-  var port = process.env.PORT || 8000;
-  var server = gulp.src(process.cwd())
-      .pipe(webserver({
-        port,
-        host,
-        directoryListing: true,
-        livereload: true,
-        https: false,
-        middleware: [app],
-      }));
-
-  return server;
-}
-
-gulp.task('serve', serve);
+gulp.task('serve', function() {
+  gulp.src(config.dest.default)
+    .pipe(server({
+      livereload: true,
+      directoryListing: {
+        enable: true,
+        path: 'dist'
+      },
+    }));
+});

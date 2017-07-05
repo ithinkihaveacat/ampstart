@@ -26,32 +26,51 @@ const cssbeautify = require('cssbeautify');
 
 function collectResources(filepath, html, done) {
   const filename = path.basename(filepath, '.amp.html');
+  console.log('start for', filepath);
   const env = jsdom.env(html, function(err, window) {
-    const css = window.document.querySelector('style[amp-custom]').textContent;
+    const ampCustom = window.document.querySelector('style[amp-custom]');
+    const css = ampCustom && ampCustom.textContent || '';
     const ampimgs = window.document.querySelectorAll('amp-img[src]');
     // This can most likely be done with the amp-img scan but separating
     // out for now.
-    let srcsetimgs = window.document.querySelectorAll('amp-img[srcset]');
+    var srcsetimgs = window.document.querySelectorAll('amp-img[srcset]');
     srcsetimgs = [].concat.apply([], [].slice.call(srcsetimgs)
         .map(function(ampimg) {
           return ampimg.getAttribute('srcset')
               .split(',').map(function(pair) {
                 const src = pair.trim().split(' ')[0];
+                if (src.indexOf('http://') == 0 ||
+                    src.indexOf('https://') == 0 ||
+                    src.indexOf('www.') == 0) {
+                  return false;
+                }
                 const abspath = path.resolve(path.dirname(filepath), src);
+                console.log('abspath', abspath);
                 return abspath.replace(`${process.cwd()}/`, '');
               });
         }));
     const imgs = [].slice.call(ampimgs).map(function(el) {
       const src = el.getAttribute('src');
+      if (src.indexOf('http://') == 0 ||
+          src.indexOf('https://') == 0 ||
+          src.indexOf('www.') == 0) {
+        return false;
+      }
       const abspath = path.resolve(path.dirname(filepath), src);
+      console.log('src', src);
+      console.log('abspath', abspath);
       return abspath.replace(`${process.cwd()}/`, '');
     });
     const name = filepath.replace(`${process.cwd()}/`, '');
     imgs.push.apply(imgs, srcsetimgs);
     imgs.forEach(function(imgpath) {
-      fs.copySync(imgpath, `.archive/${imgpath.replace(/^dist/, filename)}`);
+      if (imgpath) {
+        const dest = `.archive/${imgpath.replace(/^dist/, filename)}`;
+        fs.copySync(imgpath, dest);
+      }
     });
     const pathToTmpl = filepath.replace(/.*templates\/(.*)/, '\$1');
+    console.log('pathToTmpl', pathToTmpl);
     fs.copySync(filepath,
         `.archive/${filename}/templates/${pathToTmpl}`);
     if (css) {
