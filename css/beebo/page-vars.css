@@ -24,6 +24,7 @@
   --content-max-width: 32rem;
 
   --color-font-accent: #dc322f;
+  --color-font-secondary: var(--color-grey);
 
   /* css/ampstart-base/bass-override-vars.css */
 
