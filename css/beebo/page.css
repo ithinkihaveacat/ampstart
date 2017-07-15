@@ -197,6 +197,10 @@ div.masthead .prelude {
   line-height: 1;
 }
 
+body.smackerels h2 > a {
+  text-decoration: none;
+}
+
 @media (--breakpoint-lg) {
   div.masthead.lg-mx-auto {
     left: 50%;
