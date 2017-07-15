@@ -2,7 +2,7 @@
   "www-index": {
     "head-tag": {
       "title": "AMP Start - Accelarated Mobile Pages Templates",
-      "canonical-path": "https://www.ampstart.com/",
+      "canonical-path": "",
       "extensions": [
         "amp-carousel",
         "amp-sidebar",
@@ -92,7 +92,7 @@
           },
           "desc": "A responsive layout that features text, images, embedded social posts, and quick links to related content.",
           "lightbox-id": "template-3",
-          "src": "templates/article.amp.html",
+          "src": "templates/article/article.amp.html",
           "download": "archive/article.zip"
         }
       },
@@ -110,7 +110,7 @@
           "right-aligned": true,
           "desc": "A responsive layout that features text and images, and the ability to comment, share, and follow.",
           "lightbox-id": "template-1",
-          "src": "templates/blog.amp.html",
+          "src": "templates/blog/blog.amp.html",
           "download": "archive/blog.zip"
         }
       }
@@ -126,7 +126,7 @@
             "2x_url": "../img/www/index/theme1_article_2x.png"
           },
           "lightbox-id": "theme1_article",
-          "src": "templates/themes/1/template_1_article.amp.html",
+          "src": "templates/themes_1/template_1_article.amp.html",
           "download": "archive/template_1_article.zip"
         }
       },
@@ -140,7 +140,7 @@
             "2x_url": "../img/www/index/theme2_home_2x.png"
           },
           "lightbox-id": "theme2_home",
-          "src": "templates/themes/2/home.amp.html",
+          "src": "templates/themes_2/home.amp.html",
           "download": "archive/home.zip"
         }
       },
