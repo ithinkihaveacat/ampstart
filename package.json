@@ -16,8 +16,10 @@
   "devDependencies": {
     "autoprefixer": "^6.5.3",
     "basscss-responsive-margin": "^1.1.0",
+    "basscss-responsive-padding": "^1.1.0",
     "basscss-responsive-type-scale": "^1.0.1",
     "child_process": "^1.0.2",
+    "css-tree": "1.0.0-alpha19",
     "cssbeautify": "^0.3.1",
     "cssnano": "^3.8.1",
     "deepmerge": "^1.4.4",
@@ -35,6 +37,7 @@
     "gulp-webserver": "^0.9.1",
     "highlights": "^2.1.1",
     "jsdom": "^9.11.0",
+    "markdown-table": "^1.1.1",
     "mustache": "2.3.0",
     "path": "^0.12.7",
     "postcss": "5.0.14",

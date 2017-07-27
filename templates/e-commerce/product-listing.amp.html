@@ -16,11 +16,11 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-<html ⚡>
+<html ⚡ lang="en">
 {{#header}} {{> ../../utils/amp-page-head.snip.html}}
 <body>
   {{> ../../components/navbar/navbar.snip.html}} {{/header}}
-  <main id="content" role="main" class="main">
+  <main id="content" role="main" class="main commerce-listing">
   {{#main}}
   <amp-state id="products">
     <script type="application/json">
@@ -30,15 +30,13 @@ limitations under the License.
       }
     </script>
   </amp-state>
-
-  <section class="flex flex-wrap">
-    {{#banner.image}}
-      <amp-img class="xs-hide sm-hide commerce-listing-banner" src="{{url}}" width="{{width}}" height="{{height}}" layout="responsive" alt="{{alt}}"></amp-img>
-    {{/banner.image}}
-
+  {{#banner.image}}
+    <amp-img class="commerce-listing-banner xs-hide sm-hide" src="{{url}}" width="{{width}}" height="{{height}}" layout="responsive" alt="{{alt}}"></amp-img>
+  {{/banner.image}}
+  <section class="commerce-listing-content mx-auto flex flex-wrap pb4">
     {{#filters}}
-    <div class="col-3 pt4 pl5 xs-hide sm-hide flex flex-column items-center commerce-panel-filled">
-      <div class="pr7">
+    <div class="col-3 xs-hide sm-hide flex flex-column">
+      <div class="pt4 pr4 self-center">
         <h2 class="h5 mb2">Categories</h2>
         {{#categories}}
           {{> ../../components/inputs/inputs.snip.html}}
@@ -46,22 +44,22 @@ limitations under the License.
       </div>
     </div>
 
-    <div class="commerce-listing-wrapper col-12 md-col-7 mb2">
-      <div class="md-commerce-header relative md-flex flex-wrap items-center md-mb2">
-        <h1 class="h3 mb1 ml3 mt2 md-mt2 md-mb2 md-ml0 flex-auto">Products</h1>
-        <div class="inline-block ml3 mr2 mb1 md-mb0">
+    <div class="col-12 md-col-7 pt2 pb3 md-px4 md-pt1 md-pb7">
+      <div class="md-commerce-header relative md-flex flex-wrap items-center md-mx0 md-mb2">
+        <h1 class="h3 mb2 md-mt2 md-mb2 md-ml0 flex-auto px2">Products</h1>
+        <div class="commerce-listing-filters pt2 pb2 mb3 md-mb0">
           {{#categories}} {{> partials/select.snip.html}} {{/categories}}
+          {{#price}} {{> partials/select.snip.html}} {{/price}}
         </div>
-        {{#price}} {{> partials/select.snip.html}} {{/price}}
       </div>
 
-      <amp-list class="mx1 md-mxn1" [src]="'api/' + products.filter + '-' + products.category + '-products.json'" src="api/high-low-all-products.json" height="500" width="300" layout="responsive">
+      <amp-list class="mx1 md-mxn1" [src]="'api/' + products.filter + '-' + products.category + '-products.json'" src="api/high-low-all-products.json" height="1000" width="300" layout="responsive">
         <template type="amp-mustache">
-          <a href="product-details.amp.html" class="commerce-listing-product-item text-decoration-none inline-block col-6 md-col-3 px1 mb2 md-mb4">
-            <amp-img src="<%image%>" width="340" height="340" layout="responsive" alt="<% name %>"></amp-img>
+          <a href="product-details.amp.html" class="text-decoration-none inline-block col-6 md-col-3 px1 mb2 md-mb4">
+            <amp-img class="commerce-listing-product-image mb2" src="<%image%>" width="340" height="340" layout="responsive" alt="<% name %>"></amp-img>
             <h2 class="h6"><% name %></h2>
             <% description %>
-            <div class="h6">&#163;<% price %></div>
+            <div class="h6 mt1">&#163;<% price %></div>
           </a>
         </template>
       </amp-list>
@@ -70,5 +68,6 @@ limitations under the License.
   </section>
   {{/main}}
   </main>
+  {{> partials/footer.snip.html}}
 </body>
 </html>

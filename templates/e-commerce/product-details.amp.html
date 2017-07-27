@@ -15,12 +15,29 @@ limitations under the License.
 -->
 
 <!doctype html>
-<html ⚡>
+<html ⚡ lang="en">
 {{#header}} {{> ../../utils/amp-page-head.snip.html}} {{/header}}
 
-<body>
+<body [class]="cart.added ? 'commerce-cart-added' : ''">
   {{#header}}{{> ../../components/navbar/navbar.snip.html}} {{/header}} {{#main}}
+
+  <amp-state id="cart">
+    <script type="application/json">
+      {
+        "added": false
+      }
+    </script>
+  </amp-state>
+
   <main id="content" role="main" class="main">
+    <div class="commerce-cart-notification fixed col-12 right-0 mx0 md-mx2">
+      {{> partials/cart-items.snip.html}}
+      <div class="flex p2 mxn1">
+        <a href="#" class="ampstart-btn ampstart-btn-secondary caps center col col-6 mx1">send</a>
+        <a href="checkout.amp.html" class="ampstart-btn caps center col col-6 mx1">checkout</a>
+      </div>
+    </div>
+
     {{#product-details}}
     <amp-state id="product">
       <script type="application/json">
@@ -46,8 +63,8 @@ limitations under the License.
       </script>
     </amp-state>
 
-    <section class="flex flex-wrap">
-      <div class="col-12 md-col-6 px2 md-pl7 md-pt5 pt2">
+    <section class="flex flex-wrap pb4 md-pb7">
+      <div class="col-12 md-col-6 px2 pt2 md-pl7 md-pt4">
         <amp-carousel width="1280" height="720" layout="responsive" type="slides" [slide]="product.selectedSlide" on="slideChange: AMP.setState({product: {selectedSlide: event.index}})">
           <amp-img [src]="product[product.selectedColor].large.image1" src="{{colours.0.large.image1}}" width="1280" height="720" layout="responsive"
             role="button" tabindex="0" alt="product image"></amp-img>
@@ -74,7 +91,7 @@ limitations under the License.
           </ul>
         </amp-selector>
       </div>
-      <div class="col-12 md-col-6 flex flex-wrap content-start px2 md-pl5 md-pr7 md-pt5">
+      <div class="col-12 md-col-6 flex flex-wrap content-start px2 md-pl5 md-pr7 md-pt4">
         <div class="col-6 self-start pb2">
           <h1 class="h3 md-h2">{{name}}</h1>
           <div class="h4 md-h3">{{price}}</div>
@@ -87,18 +104,18 @@ limitations under the License.
           Donec id elit non mi porta gravida at eget metus. Donec ullamcorper nulla non metus auctor fringilla.
         </div>
         <hr class="mb4" />
-        <div class="col-6 md-col-3 self-start pb4">
-          <span class="h6 align-top pr2">colour</span>
+        <div class="col-6 self-start pb4">
+          <span class="h6 md-h7 align-top pr2">colour:</span>
           <amp-selector class="inline-block" name="color" layout="container" [selected]="product.selectedColor" on="select:AMP.setState({
                               product: {
                                 selectedColor: event.targetOption
                               }
                             })">
             <ul class="m0 list-reset inline-block">
-              <li class="inline-block">
+              <li class="inline-block mr1">
                 <div option="{{colours.0.name}}" selected="selected" class="commerce-product-color-swatch commerce-product-color-{{colours.0.name}}"></div>
               </li>
-              <li class="inline-block">
+              <li class="inline-block mr1">
                 <div option="{{colours.1.name}}" class="commerce-product-color-swatch commerce-product-color commerce-product-color-{{colours.1.name}}"></div>
               </li>
             </ul>
@@ -109,23 +126,27 @@ limitations under the License.
         </div>
         <hr class="mb4" />
         <div class="col-12 self-start mb4 commerce-product-btn-wrapper">
-          <a href="{{url}}" class="ampstart-btn ampstart-btn-secondary caps">Add to cart</a>
+          <button class="ampstart-btn ampstart-btn-secondary caps" on="tap:AMP.setState({cart: {added: true}})">Add to cart</button>
         </div>
         <hr class="md-hide lg-hide" />
       </div>
-      <div class="col-12 flex flex-wrap">
+      <div class="col-12 flex flex-wrap pb3">
         <hr class="xs-hide sm-hide mt4" />
         <div class="col-12 md-col-6 px2 md-pl7 commerce-product-desc">
-          <section class="pt4 pb4 md-pt6 md-px4">
+          <section class="pt3 md-pt6 md-px4">
             <h2 class="h5 md-h4">Overview</h2>
-            <p class="mt2">Id lacus amet. Aliquam eos nunc ut scelerisque lacinia, eu rutrum id, vestibulum aliqua vivamus luctus eu rhoncus
+            <p class="mt2 mb3">Id lacus amet. Aliquam eos nunc ut scelerisque lacinia, eu rutrum id, vestibulum aliqua vivamus luctus eu rhoncus
               ut, sodales id. Velit lacus, fermentum neque et sagittis, ac venenatis volutpat, dolore neque feugiat proin
               fermentum odio, odio arcu in eu wisi. </p>
+              <hr/>
+              <div class="pt3 md-pt4 md-pb4">
+                <h2 class="h5 md-h4 mb2">Reviews</h2>
+                {{> partials/review.snip.html}}
+              </div>
           </section>
-          <hr class="md-hide lg-hide" />
         </div>
-        <div class="col-12 md-col-5 md-pr7 md-pl5 commerce-panel-filled">
-          <section class="pt4 pb4 px2 md-pt6">
+        <div class="col-12 md-col-5 md-pr7 md-pl5 commerce-side-panel">
+          <section class=" pt3 pb3 md-pt4 md-pb4 px2 md-pt6 commerce-panel-filled">
             <h2 class="h5 md-h4">Size Guide</h2>
             <div class="mt2">
               <table class="commerce-table center">
@@ -155,8 +176,7 @@ limitations under the License.
               </table>
             </div>
           </section>
-          <hr class="md-hide lg-hide" />
-          <section class="pt4 pb4 px2 commerce-panel-empty md-commerce-panel-filled">
+          <section class="pt3 pb3 md-pt4 md-pb4 px2 commerce-panel-empty md-commerce-panel-filled">
             <h2 class="h5 md-h4">Full spec</h2>
             <div class="mt2">
               <dl class="flex flex-wrap">
@@ -168,11 +188,12 @@ limitations under the License.
             </div>
           </section>
         </div>
+        {{> partials/related-products.snip.html}}
       </div>
     </section>
     {{/product-details}}
   </main>
-  {{/main}} {{> ../../components/footer/footer.snip.html}}
+  {{/main}}
+  {{> partials/footer.snip.html}}
 </body>
-
 </html>

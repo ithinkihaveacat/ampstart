@@ -1,0 +1,88 @@
+.ampstart-sidebar {
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Position the close button at the top of the sidebar */
+/* Make it the same height as the header in order to align the close and hamburger icons */
+.ampstart-sidebar-header {
+  position: absolute;
+  top: 0;
+  left: var(--space-3);
+  height: var(--navbar-height);
+}
+
+@media (--breakpoint-mt) {
+  .ampstart-sidebar-header {
+    height: var(--wide-navbar-height);
+  }
+}
+
+.ampstart-sidebar-nav {
+  width: 100%;
+  margin: auto;
+}
+
+/* Makes the clickable area around the close button bigger and easier to hit */
+.ampstart-navbar-trigger {
+  padding: 1.5rem;
+}
+
+.ampstart-sidebar .ampstart-nav-item {
+  max-width: 7.5em;
+  margin: auto;
+  font-weight: var(--font-weight-heavy);
+  line-height: var(--line-height-5);
+  color: var(--color-font-primary);
+}
+
+.ampstart-sidebar .lune-nav-contact {
+  max-width: 10.625rem;
+}
+
+.ampstart-nav-link {
+  position: relative;
+  display: flex;
+}
+
+/*
+ * Using margin: auto instead of justify-items: space-between, see
+ * https://stackoverflow.com/questions/36006173/exclude-element-with-fixed-positioning-from-justify-content-in-flex-layout/36102124#36102124
+ */
+.ampstart-nav-link > span {
+  margin: auto;
+}
+
+.ampstart-nav-link > span:first-child {
+  margin-left: 0;
+}
+
+.ampstart-nav-link > span:last-child {
+  margin-right: 0;
+}
+
+.ampstart-sidebar .lune-nav-contact .ampstart-nav-link {
+  display: inline-block;
+  text-transform: lowercase;
+}
+
+/* Strikethrough effect on hover */
+.ampstart-nav-link::before {
+  position: absolute;
+  top: calc(50% - .05em);
+  left: -.2em;
+  right: -.2em;
+  height: .1em;
+  content: '';
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .2s ease;
+}
+
+.ampstart-nav-link:hover::before,
+.ampstart-nav-link:focus::before {
+  transform: none;
+}
