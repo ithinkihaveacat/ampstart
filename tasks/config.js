@@ -17,19 +17,27 @@
 module.exports = {
   src: {
     components: 'components/**/*.*',
-    templates: '{templates, dummy}/**/*.html',
+    templates: [
+      '{templates, dummy}/**/*.html',
+      '!templates/**/partials/**/*.html'
+    ],
+    templateApi: 'templates/*/api/*.json',
     www_pages: 'www/**/*.html',
     hl_partials: 'hl-partials/**/*.html',
-    css: ['css/**/*.css', '!css/ampstart-base/**/*.css'],
-    data: '*/**/*.json',
+    css: ['css/**/*.css'],
+    css_ignore: ['!css/**/_*.css', '!css/ampstart-base/**/*.css'],
+    data: ['*/**/*.json', '!templates/*/data/*.json'],
     img: 'img/**',
   },
   dest: {
     default: 'dist',
     templates: 'dist',
+    templateApi: 'dist/templates',
     www_pages: 'dist',
     hl_partials: 'dist/hl-partials',
     css: 'dist/css/',
     img: 'dist/img/',
+    configurator_app: 'dist/configurator',
+    uncompiled_css: 'dist/configurator/uncompiledCss'
   },
 };
