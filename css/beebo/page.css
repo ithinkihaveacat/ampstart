@@ -65,11 +65,11 @@ h1, .h1 {
 }
 
 h1::before, .h1::before {
-  content: '[ ';
+  content: '[&#160;';
 }
 
 h1::after, .h1::after {
-  content: ' ]';
+  content: '&#160;]';
 }
 
 h2, .h2 {
