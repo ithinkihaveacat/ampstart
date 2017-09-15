@@ -40,29 +40,31 @@ html {
 
 body {
   font-kerning: normal;
-  font-variant-ligatures: common-ligatures contextual;
-  font-variant-numeric: oldstyle-nums proportional-nums;
   font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
   line-height: 1.5; /* unitless line height is preferred https://developer.mozilla.org/en/docs/Web/CSS/line-height */
+  font-weight: 500;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   color: var(--color-font-accent);
   letter-spacing: normal;
   text-transform: uppercase;
-  font-weight: 900;
+  font-weight: 800;
+  font-feature-settings: "tnum", "lnum";
 }
 
 h1, .h1 {
   text-transform: none;
-  line-height: var(--line-height-5);
+  line-height: 3rem;
 }
 
 h2, .h2 {
+  text-transform: none;
   line-height: var(--line-height-4);
 }
 
 h3, .h3 {
+  text-transform: none;
   line-height: var(--line-height-3);
 }
 
@@ -79,7 +81,7 @@ h6, .h6 {
 }
 
 a {
-  text-decoration-skip: ink;
+  text-decoration-skip: objects; /* "ink" to skip descenders */
 }
 
 time {
@@ -88,9 +90,9 @@ time {
   color: var(--color-grey);
 }
 
-blockquote {
+/* blockquote {
   font-feature-settings: "dlig" 1;
-}
+} */
 
 .sm-caps {
   font-variant: small-caps;
@@ -98,33 +100,34 @@ blockquote {
 
 div.hr {
   color: var(--color-grey);
-  font-feature-settings: "dlig" 1;
-  font-size: 3rem;
+  /* font-feature-settings: "dlig" 1; */
+  font-size: 2rem;
 }
 
 div.hr span::before {
-  content: '-.-';
+  content: '*';
 }
 
 .ampstart-headerbar {
-  color: #586e75;
-  background-color: #d7d7d7;
-  /*background-color: #f6f6f6;*/
-  border-bottom: 1px solid #b6b4b6;
+  color: var(--color-font-accent);
+  /* gm convert -size 200x50 'xc:#fafafa' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '100%' step3.png ; and base64 -i step3.png -o - | pbcopy */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyAQAAAAAxKqlMAAABWElEQVQ4y21TwVEFMQilMwtzHDrREizAQ8rw5FCAh5w0h0yCGwgE/srMziawPN57yQKnQFt8M+iihGrV16o0XXZ97Z1UPiLerr8Zmn8paGg9PDf0fJyzYzDTlaXrC1qVuTIejX27eyiImakyAgNpbT6nCt/GG+3aQuXHIAHG1VMpsRC3SNCGQtioqRLhaHvKbcHR5Fv0oB8pQmNVfvi/ACNaEhgdPTNQ6DIbzObDUdsK3PBnnFOurVNHvLOmJA249hug8IRGUWA/fBK3azHY7IKtUHant5U1x7f5kIwbegb3AxPtHqJbFnq849nyego8qopIRwjjeDk5Vfj97uZMczB3pH/hNaRxV4yQXdyv3YN8D0xoN3c6pUTxSjW4KekXVxfu9Yp++YD7TIl/1/vTR1WuQamD9+4ioCnae1EwSQ/toY0yXbCxzn4NJfCgVOnjfqTSIvVZFP0PlY/CseByg50AAAAASUVORK5CYII=");
+  border-bottom: 1px solid var(--color-disabled);
   box-shadow: unset;
   font-family: var(--font-system);
-  /*font-family: Verdana;*/
-  font-size: 0.65rem;
+  font-size: var(--h2);
   font-weight: bold;
-  opacity: 0.90;
-  /*text-transform: uppercase;*/
+}
+
+.ampstart-headerbar a {
+  text-decoration: none;
 }
 
 .ampstart-navbar-trigger {
   font-family: var(--font-system);
   font-size: var(--h3);
   font-weight: bold;
-  color: #586e75;
+  color: var(--color-font-accent);
   box-shadow: 0 0 15px 5px rgba(0,0,0,.5);
   background-color: #d7d7d7;
   border-top-right-radius: 10px;
@@ -145,20 +148,15 @@ div.hr span::before {
 
 .ampstart-pullquote {
   font-size: inherit;
-}
-
-.menu {
-  font-family: var(--font-system);
-  font-weight: bold;
+  border-left-color: var(--color-disabled);
 }
 
 #sidebar {
   font-family: var(--font-system);
   font-weight: bold;
-  width: inherit;
+  font-size: 1.6rem;
+  width: 80vw;
   box-shadow: 0 0 15px 5px rgba(0,0,0,.5);
-  /*height: 15rem;*/
-  /*position: fixed;*/
 }
 
 #sidebar a {
@@ -199,6 +197,10 @@ div.masthead .prelude {
 
 body.smackerels h2 > a {
   text-decoration: none;
+}
+
+.color-disabled {
+  color: var(--color-disabled);
 }
 
 @media (--breakpoint-lg) {
