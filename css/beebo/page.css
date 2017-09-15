@@ -173,38 +173,6 @@ div.hr span::before {
   font-size: 2rem;
 }
 
-div.masthead {
-  /* base64 -i etc/svg/beebo-logo.svg -o - | pbcopy */
-  /*background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHNoYXBlLXJlbmRlcmluZz0iY3Jpc3BFZGdlcyIgdmlld0JveD0iMCAwIDE2MCAxNjAiPgo8cGF0aCBmaWxsPSIjYjU4OTAwIiBkPSJNMCAwaDg3Ljg3NHY2NC41MDRIMHoiLz4KPHBhdGggZmlsbD0iI2RjMzIyZiIgZD0iTTEyMS4xMDUgNTUuMTU1aDM4LjMzdjUzLjI5aC0zOC4zM3oiLz4KPHBhdGggZmlsbD0iIzI2OGJkMiIgZD0iTTM4Ljg0NSA4Mi4yNmg2My41NnY1NS4xNWgtNjMuNTZ6Ii8+Cjwvc3ZnPgo=");*/
-  background-origin: padding-box;
-  background-position: 1.5rem 2.2rem;
-  background-repeat: no-repeat;
-  background-size: 6rem 6rem;
-  background-color: #d7d7d7;
-  position: absolute;
-  text-align: center;
-  border-radius: 50%;
-  box-shadow: 0 0 15px 5px rgba(0,0,0,.5);
-}
-
-div.masthead .logo a {
-  color: #586e75;
-  font-family: "CA Aires Pro", sans-serif;
-  font-size: 2rem;
-  font-style: italic;
-  font-weight: 700;
-  text-decoration: none;
-  line-height: 1;
-}
-
-div.masthead .prelude {
-  color: #839496;
-  font-size: 1.5rem;
-  font-style: italic;
-  font-weight: 900;
-  line-height: 1;
-}
-
 body.smackerels h2 > a {
   text-decoration: none;
 }
