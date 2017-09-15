@@ -46,30 +46,48 @@ body {
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  color: var(--color-font-accent);
+  /* color: var(--color-font-accent); */
   letter-spacing: normal;
+  font-weight: 700;
+  font-feature-settings: "kern", "liga" 0, "clig" 0, "calt" 0, "tnum", "lnum";
+  line-height: 1rem;
+  font-size: 1.1rem;
   text-transform: uppercase;
-  font-weight: 800;
-  font-feature-settings: "tnum", "lnum";
+  /* letter-spacing: 0.05rem; */
 }
 
 h1, .h1 {
-  text-transform: none;
-  line-height: 3rem;
+  /* text-transform: none; */
+  line-height: inherit;
+  font-weight: 800;
+  letter-spacing: 0.1rem;
+  font-size: 1.2rem;
+}
+
+h1::before, .h1::before {
+  content: '[ ';
+}
+
+h1::after, .h1::after {
+  content: ' ]';
 }
 
 h2, .h2 {
-  text-transform: none;
-  line-height: var(--line-height-4);
+  /* text-transform: none; */
+  line-height: var(--line-height-3);
+  letter-spacing: 0.05rem;
+  font-size: 0.95rem;
 }
 
 h3, .h3 {
   text-transform: none;
   line-height: var(--line-height-3);
+  font-style: italic;
 }
 
 h4, .h4 {
   line-height: var(--line-height-2);
+  font-size: 0.9em;
 }
 
 h5, .h5 {
@@ -111,7 +129,7 @@ div.hr span::before {
 .ampstart-headerbar {
   color: var(--color-font-accent);
   /* gm convert -size 200x50 'xc:#fafafa' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '100%' step3.png ; and base64 -i step3.png -o - | pbcopy */
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyAQAAAAAxKqlMAAABWElEQVQ4y21TwVEFMQilMwtzHDrREizAQ8rw5FCAh5w0h0yCGwgE/srMziawPN57yQKnQFt8M+iihGrV16o0XXZ97Z1UPiLerr8Zmn8paGg9PDf0fJyzYzDTlaXrC1qVuTIejX27eyiImakyAgNpbT6nCt/GG+3aQuXHIAHG1VMpsRC3SNCGQtioqRLhaHvKbcHR5Fv0oB8pQmNVfvi/ACNaEhgdPTNQ6DIbzObDUdsK3PBnnFOurVNHvLOmJA249hug8IRGUWA/fBK3azHY7IKtUHant5U1x7f5kIwbegb3AxPtHqJbFnq849nyego8qopIRwjjeDk5Vfj97uZMczB3pH/hNaRxV4yQXdyv3YN8D0xoN3c6pUTxSjW4KekXVxfu9Yp++YD7TIl/1/vTR1WuQamD9+4ioCnae1EwSQ/toY0yXbCxzn4NJfCgVOnjfqTSIvVZFP0PlY/CseByg50AAAAASUVORK5CYII=");
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyAQAAAAAxKqlMAAAB10lEQVQ4y2VUPXKdIQzUzd5RcgSXrzNHygE8L7pBXLqKKV15VGQ8mjFPKJIQP3Yo+ACBdrULHxSNJpqDGHsDRfJvG4tdcQSaQumxxMxyHSdkxCAz8EyF49MKaI3V/kDyBWac6Qsbg4j0PiIVP3f4Vck5cZk4/zWJCKkUKto6GtuaIehZixGwNaE2icIsUiZpQ69nPeShyyJiMSioK/UchV5AZ0HFkawj9Gy1y0DBefBT2fgYDt1j/s7VDiQf3AxmY0k3OiRj2smCByksLmPnGFviBvrWjBKn2dNyW/mOU1dvEfe7xubfsWxUn7c6UoaoBypct2xWRtmCgCWj0LsOo/VOxodu4QIp8djqzvmG8qtOnDBMiyjOw+Epa611CBYYfd3EPu+uC/THTjRfAN3+eF+mUubpHP19PqRohwv9UE2PuyNLtUiMNod6UJoPQlqy9sts7edQcyiNnk0ec68MJC+NZj2J9OasymbgU85LtarhlxHhdQ+CJFsW2hqsx1hxZcsT2Kdpt42zBXUW80/B6Y5oXkmhyAJ6PPae0r1YRXdgm//IZ9fjzYXU9hZeN07sf6xpI3yMb5jzdNTm3LD1rIk58NDnVinudJer/T7CllZx19P1bEX/AaSatF9w7bjEAAAAAElFTkSuQmCC");
   border-bottom: 1px solid var(--color-disabled);
   box-shadow: unset;
   font-family: var(--font-system);
@@ -123,20 +141,6 @@ div.hr span::before {
   text-decoration: none;
 }
 
-.ampstart-navbar-trigger {
-  font-family: var(--font-system);
-  font-size: var(--h3);
-  font-weight: bold;
-  color: var(--color-font-accent);
-  box-shadow: 0 0 15px 5px rgba(0,0,0,.5);
-  background-color: #d7d7d7;
-  border-top-right-radius: 10px;
-  position: fixed;
-  line-height: inherit;
-  bottom: 0;
-  left: 0;
-}
-
 .ampstart-btn {
   font-family: var(--font-system);
   font-weight: bold;
@@ -144,6 +148,8 @@ div.hr span::before {
 
 .ampstart-btn-secondary {
   color: var(--color-grey);
+  /* gm convert -size 200x50 'xc:#fdfdfd' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '100%' step3.png ; and base64 -i step3.png -o - | pbcopy */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyAQAAAAAxKqlMAAAAyElEQVQ4y62UQQ7EIAhFvblH8ygcgaULosxo1SpgnSZDGtPw+L9ItI6XCOXB+upYBpXFW6SHE8XMKbJ2o1WTLCuaNKqgEYKeyKqDvNF0y29faJK9ZkfQICjq86RJj25zQCVgMlcsfXOkeaqL2zKHi4TUasPd/8NO5VaItydEdSC1ydJc+3Ph6PZ3An2A1tzordsPJJ417cKM0eVB6IYtwtYNVgJjOXaN5TtgkKSTJeOFm+dxLF/PLVYSt5p8ctO33hvlqDpY/kgfn8TVxICK8QIAAAAASUVORK5CYII=");
 }
 
 .ampstart-pullquote {
@@ -161,6 +167,10 @@ div.hr span::before {
 
 #sidebar a {
   text-decoration: none;
+}
+
+.sidebar-toggle {
+  font-size: 2rem;
 }
 
 div.masthead {
