@@ -40,40 +40,36 @@ html {
 
 body {
   font-kerning: normal;
-  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum";
+  font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum"; /* https://helpx.adobe.com/typekit/using/open-type-syntax.html */
   line-height: 1.5; /* unitless line height is preferred https://developer.mozilla.org/en/docs/Web/CSS/line-height */
   font-weight: 500;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  /* color: var(--color-font-accent); */
   letter-spacing: normal;
   font-weight: 700;
   font-feature-settings: "kern", "liga" 0, "clig" 0, "calt" 0, "tnum", "lnum";
   line-height: 1rem;
   font-size: 1.1rem;
   text-transform: uppercase;
-  /* letter-spacing: 0.05rem; */
 }
 
 h1, .h1 {
-  /* text-transform: none; */
   line-height: inherit;
   font-weight: 800;
   letter-spacing: 0.1rem;
   font-size: 1.2rem;
 }
 
-h1::before, .h1::before {
+h1::before {
   content: '[\00a0';
 }
 
-h1::after, .h1::after {
+h1::after {
   content: '\00a0]';
 }
 
 h2, .h2 {
-  /* text-transform: none; */
   line-height: var(--line-height-3);
   letter-spacing: 0.05rem;
   font-size: 0.95rem;
@@ -128,27 +124,28 @@ div.hr span::before {
 
 .ampstart-headerbar {
   color: inherit;
-  /* gm convert -size 200x50 'xc:#fafafa' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '100%' step3.png ; and base64 -i step3.png -o - | pbcopy */
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyAQAAAAAxKqlMAAAB10lEQVQ4y2VUPXKdIQzUzd5RcgSXrzNHygE8L7pBXLqKKV15VGQ8mjFPKJIQP3Yo+ACBdrULHxSNJpqDGHsDRfJvG4tdcQSaQumxxMxyHSdkxCAz8EyF49MKaI3V/kDyBWac6Qsbg4j0PiIVP3f4Vck5cZk4/zWJCKkUKto6GtuaIehZixGwNaE2icIsUiZpQ69nPeShyyJiMSioK/UchV5AZ0HFkawj9Gy1y0DBefBT2fgYDt1j/s7VDiQf3AxmY0k3OiRj2smCByksLmPnGFviBvrWjBKn2dNyW/mOU1dvEfe7xubfsWxUn7c6UoaoBypct2xWRtmCgCWj0LsOo/VOxodu4QIp8djqzvmG8qtOnDBMiyjOw+Epa611CBYYfd3EPu+uC/THTjRfAN3+eF+mUubpHP19PqRohwv9UE2PuyNLtUiMNod6UJoPQlqy9sts7edQcyiNnk0ec68MJC+NZj2J9OasymbgU85LtarhlxHhdQ+CJFsW2hqsx1hxZcsT2Kdpt42zBXUW80/B6Y5oXkmhyAJ6PPae0r1YRXdgm//IZ9fjzYXU9hZeN07sf6xpI3yMb5jzdNTm3LD1rIk58NDnVinudJer/T7CllZx19P1bEX/AaSatF9w7bjEAAAAAElFTkSuQmCC");
-  background-size: 400px 100px;
-  image-rendering: -webkit-crisp-edges; /* safari */
-  image-rendering: pixelated; /* everything else */
+  /* gm convert -size 750x40 'xc:#fafafa' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '100%' step3.png ; and base64 -i step3.png -o - | pbcopy */
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAAoAQAAAACJSELnAAADaUlEQVRIx5VXQXJbIQz1zXokL7toEw7SQ/QAacpBMq1WXaUOizZDxxgoSAgk4DdTZuwPCD09PQT+Pl3yQQv0MHr2PXcsPb7it2+TqUzHYottfDsJV9eev1rPS8/W3nFnCitJpfIBdFXwo70yubIm7gHDUda+WMAUVvfMPnGuEsHPfsV43QK6D6MPNENw8OVUtXKzw0VOpRZJxPuOzksCfniR7Ybwmdk7+nrMN2LrVQ5JizJMxS2KddB7VRyXmuez8JPLFVoUoQjM5bFTk5i3kxG5PA92kb7qPtV1hlOOdYFlkpasoWtJlsSJFfaek4G8NDskTsx7Vjw4NVI2rJw44qpy8X15PSfQFiaqhSD087KivJngaXNaFJfXOKJi3dDdtS9AZp/lKt4Mhje02hZYXGPT2IE1xjq2g5KYjQentmMPXWGzAnoaThs4xMfTtFPTsB2/TelFNcl1CgrHIXunhGh7Buiz3AwMYPK2GcR54CHCX3Fx1zmcFcUdeG2XMuj09ycx/z656nMZCgYEsfnNZmVuvvrWbMdU1etnvRQCml9acqkp3snAzLu2RyXQViqXPVUOMY7rzdlxHTKEjQJ04IarzaI+ED4Mg4zdZzx3NEloEpz7zLNIMULO+V91v7SrIGFasEccBWDxynl8YiK2wM+CQMzziR01hZ+URBZnSsMD76lMgO57LWXseioHE1kzg8QsK0jaxr72ASmgpuVSSOjXN8Ppk8T65o34RmZo0AQPYwtdsKR9d0/CuXna+Xq3FJV+Vn/M2+P0RaW0H1xSMHltPt9xinVx2heybJW9LTHj1mpYd3tebBO0ncypw7cu/ailrXPNJ+sz5Q+vNRGNxLHQZrvQu3ew8otYKx+Gu0c+IR2czHql0TOmKAosLciH2ixLc71L2fznf07tqlkdY7GUROrbkmnhOGjVnpWBLq4WtR7yaNqKgzdX2xR1OtUCDw0ezCR6rK+5tjBpB/Zq9B2vtPmVxTmzAl4raziRroO1TH7Xvm3mRoHRS2BASp/YShn016GEQSWHVw7uj3CRo2sXMgI5LY2jQc8m6Ag2b1unRL9Q/PeB3+LmOltQvH1RTKENpCP270kcK4IqsBDwn49W/Wl7gtzEAaskIvzb99IIuODBvGTKlsTx+3+Bw9+qh+u9u0MqCAW3v9eNVqQ4VgaWAAAAAElFTkSuQmCC");
+  background-size: 1500px 80px;
+  background-repeat: no-repeat; /* Can't repeat because of https://bugs.webkit.org/show_bug.cgi?id=177037 */
+  image-rendering: pixelated;
   border-bottom: 1px solid var(--color-disabled);
   box-shadow: unset;
   font-family: var(--font-system);
   font-size: var(--h2);
+  line-height: var(--h2);
   font-weight: bold;
-}
-
-@media only screen and (min-resolution: 2dppx) {
-  .ampstart-headerbar {
-    /* gm convert -size 200x50 'xc:#f6f6f6' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '200%' step3.png ; and base64 -i step3.png -o - | pbcopy */
-    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZAAAABkCAAAAACNoDmrAAADoElEQVR42u2d0XbjIAxEof//z92HnGzsBGwkjWBI5z61tQHRozEIhF1/y5NaXj+/c3UNyax2xq2xW+QvVUopP6s7Lc7UuEf2veHzis1zaimG+891P36LWuD/f3jbkULICCnk6AXPn3ue4XuyHuu2KNFy3/px62iBFEJG7fvzZbG369axIeLR/nYjJRE6GqlDCiGjXj/5h6spmHpsrdnvHR/JxttA9f1RXgohAxCHcNGa+X16cZaS4/VKIWTUWTPzkTqR7a6PLny2SCFk1Pvol8nXri3NrM+2QuWxSbMsSsCzrPYcx14WcV92HTl1SiFkQPZDyv/ZfRmIhO0xcKymiOfOVO0DKYSMavXoVbOv69ZwqsTa1b+/Va6WXymEDed+SJo5oT3FHBuws8W72qQQMoZmWQyxenxHHdfiiAqUdfIlOOOQ3HynmYpkUP/RCimEjBqZETDgX1fN6XF/jjZWtxRCxpftqePWyVbZK4WQQaoQDv+dY+25tBRChkkhV5nt93e9rltOfbBwNzPzn5k6I4WQUbO8lWcUQD7h8/sshZBhVEh0r2Bv2qNfdM/+HMtLIWQMZC7e/3X8uudOU3fcGcQ+e/Cr3lIIGbUfQaB8GP2GCJy2GDNopBAyDJF6JG83aCRUq5jazjOuSGaKZlnULM3Lwp+q8njq/HyWK6QQMtxnDPeI0TnyktvWtJFCyCDZMUS9sySWV7uyH0+kEDJSFbLHOMOFFELG9DHkbkedUVVjuQSYdqQQMip6fWrOew0ZdRTpx+u5IYWQsTgOWe3p+Gz3aDkphAzTGLLan4c7Bc4NmWelFEIH7IxhwATgPt4c+1EZKi2kEDIuFJLpB/BubHoG+BMphIwJp3B7cx5knvCak+0ZO5BSCBnwSH3Gm6vWRUz5vZNCyIB9YUe0sJ+/kkLIoMg6Gcsa5opwIu8rVfb7Rgwo5O+NFCt7LIWQARlDcs5y4yL594h6ThaJ78yIFEIG5F0n6DJ3ZXPPjCBL25FCyKi43efZuVfrcr2Qa2nvd0ohZARmWbnf1tjzrVpxpBAyGt/CPX/hgvGbmNiyeatn/XWsfs1SCBkUq70fRsFVOTua8LcnhZAxfS3LW2bvNefejo/ebE3PsjFkhcfntqkvfX4lRoVcfYUPYEzwjVyWyCmy25K5nyKFkAEaQ9bNgWwraniFo3suhZABP6d+09zW0cSxH7616PuVNCmEDNcYstN5QIwF/r0Z61c/pRAy/gFI5nd0ndDJYAAAAABJRU5ErkJggg==");
-  }
 }
 
 .ampstart-headerbar a {
   text-decoration: none;
+}
+
+.ampstart-headerbar a:hover {
+  /* text-decoration: underline; */
+  color: white;
+  background-color: black;
+  opacity: 0.70;
 }
 
 .ampstart-btn {
