@@ -42,7 +42,7 @@ body {
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum"; /* https://helpx.adobe.com/typekit/using/open-type-syntax.html */
   line-height: 1.5; /* unitless line height is preferred https://developer.mozilla.org/en/docs/Web/CSS/line-height */
-  font-weight: 500;
+  font-weight: 600;
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -129,6 +129,7 @@ div.hr span::before {
   background-size: 1500px 80px;
   background-repeat: no-repeat; /* Can't repeat because of https://bugs.webkit.org/show_bug.cgi?id=177037 */
   image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
   border-bottom: 1px solid var(--color-disabled);
   box-shadow: unset;
   font-family: var(--font-system);
