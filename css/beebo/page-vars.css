@@ -29,6 +29,8 @@
 
   /* css/ampstart-base/bass-override-vars.css */
 
+  --bold-font-weight: 800;
+
   --h1: 2.5rem;
   --h2: 1.8rem;
   --h3: 1.25rem;
@@ -42,5 +44,6 @@
 
   /* Other */
 
-  --base-size: 20px;
+  --base-font-size: 20px;
+  --base-font-weight: 600;
 }

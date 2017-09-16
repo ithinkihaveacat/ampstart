@@ -35,14 +35,14 @@
 @import 'page-vars';
 
 html {
-  font-size: var(--base-size); /* 1rem anywhere is equal to this */
+  font-size: var(--base-font-size); /* 1rem anywhere is equal to this */
 }
 
 body {
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum"; /* https://helpx.adobe.com/typekit/using/open-type-syntax.html */
   line-height: 1.5; /* unitless line height is preferred https://developer.mozilla.org/en/docs/Web/CSS/line-height */
-  font-weight: 600;
+  font-weight: var(--base-font-weight);
 }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
@@ -96,6 +96,10 @@ h6, .h6 {
 
 a {
   text-decoration-skip: objects; /* "ink" to skip descenders */
+}
+
+b, strong {
+  font-weight: var(--bold-font-weight);
 }
 
 time {
