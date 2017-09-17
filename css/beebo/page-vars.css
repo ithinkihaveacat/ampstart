@@ -18,6 +18,8 @@
 
   /* css/ampstart-base/base-page-vars.css */
 
+  --color-font-default: #505050;
+
   --font-family: "skolar-sans-latin", sans-serif;
   --font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 

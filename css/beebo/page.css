@@ -39,6 +39,7 @@ html {
 }
 
 body {
+  color: var(--color-font-default);
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt", "onum", "pnum"; /* https://helpx.adobe.com/typekit/using/open-type-syntax.html */
   line-height: 1.5; /* unitless line height is preferred https://developer.mozilla.org/en/docs/Web/CSS/line-height */
