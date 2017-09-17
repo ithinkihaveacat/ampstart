@@ -183,20 +183,29 @@ body.smackerels h2 > a {
   text-decoration: none;
 }
 
-.color-disabled {
-  color: var(--color-disabled);
+@media (--breakpoint-xs) {
+  .headerbar {
+    margin-bottom: 2rem;
+}
+  .ampstart-pullquote {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-left: 0.5rem;
+  }
 }
 
-@media (--breakpoint-lg) {
-  div.masthead.lg-mx-auto {
-    left: 50%;
-    transform: translateX(-50%);
+@media (--breakpoint-sm) {
+  .headerbar {
+    margin-bottom: 4rem;
+  }
+  div.masthead .logo a {
+    font-size: 2.7rem;
   }
 }
 
 @media (--breakpoint-md) {
-  article {
-    margin-top: 6rem;
+  .headerbar {
+    margin-bottom: 6rem;
   }
   div.masthead {
     top: 3rem;
@@ -211,16 +220,9 @@ body.smackerels h2 > a {
   }
 }
 
-@media (--breakpoint-sm) {
-  div.masthead .logo a {
-    font-size: 2.7rem;
-  }
-}
-
-@media (--breakpoint-xs) {
-  .ampstart-pullquote {
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
-    padding-left: 0.5rem;
+@media (--breakpoint-lg) {
+  div.masthead.lg-mx-auto {
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
