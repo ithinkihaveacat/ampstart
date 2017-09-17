@@ -62,13 +62,6 @@ h1, .h1 {
   font-size: 1.2rem;
 }
 
-h1::before {
-  content: '[\00a0';
-}
-
-h1::after {
-  content: '\00a0]';
-}
 
 h2, .h2 {
   line-height: var(--line-height-3);
