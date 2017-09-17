@@ -120,7 +120,7 @@ div.hr span::before {
   content: '*';
 }
 
-.ampstart-headerbar {
+.headerbar {
   color: inherit;
   /* gm convert -size 750x40 'xc:#f6f6f6' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '100%' step3.png ; and base64 -i step3.png -o - | pbcopy */
   background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAu4AAAAoAQAAAACJSELnAAAEwklEQVRIx21XPXIlNRD2SbiKj0HIDXC4AXj7KD4CoYMtWwcgeOEWBWuFDry2qmDLwshS0//qeTDBmxlN6+vur//0LhbGNeS3IHbk1XYqeLxgTr59AXn7xI/pI46uT9PuC98vBHQg72sHLJPBG4HUj102YfzuTaOVUe2lYh1YZ0WGVxNXEy0jTEl2NNpAv1eADyWclOsK6GW8qjhrXAS8TPli+LWtHopWkOwIXlZxn80fAnyJhWmrDYuiTJXobOE7W39+nRP+aOE4C0M8sKXXsX5J6MM+g3Bfazvn/XjV00ThRxQlyVmYAvhMSIW+39oqPpvUA8ELI0TITztSvyUXaBvxKUJD+Gw9kU9Yq4TgkFuLT/WPAzmrKqOD/OoqRqm4CLuA+ytyS1l+0Vg0Y7RuAx8UMHNfiwUlheF2v4zYPBn6d1F+J4snU60p/EL7gMV/rZyYNedFm5oP+M+OHntT7ePceenGksbe3tSc5R42s37NwmjL8C9TFRPm/MtQ0FOq5bwXtOKa8GSmof0aOfx1SAFMKvPG+jm7xITKeiEgwat2EpjhQ+onuCNE+7QpyMe7ZLYU8RCJBqJmkD33nAxbStkEMGAIdBJ95XRD/HYxIs+GYz+yTfI56G9ZRgVh1EQDnj8LK/9TtS4I2CrfW1hK1vUHvK496XUuvNktazL0/tm5nx6A+v3JQlc9ciV8Luzzwq+6ofQwFlpoStwxv5yYvxxW9UPPS1fBdeeiLQv/HLh7snWxUmJDkPTtYgc8zAnLCUoXbgVBinqqIjj0uKZBL7J3+7LIehDQZ7MWoG4LpIytedd4NwNUtXTHnRwnvVfeVIUcC4qOK4j8CFfh5NTQBNolVWj7sCZmoR59SVJTuGhaMejPF2rsdCK/8+3PuTqfiFkqraJ+0G1J1RXJdU/WH4MTTyci56l2ODTxesNdIqewlEFjoZuqWdilpR7TU69HFv90rQpeJDHnjvloxgqcZZO9mpOXe6WR3ssnVdVg580XGqiT4ZeOSQkSoIfWyedUuBPe60oq3F1v0y3ZgMvdYngmZ1p05wcPowc2vOijTp5aFW/QyTVvqGE3H7DWw6RIhpCj3PdkT4xmMQqaHYSCwC29ecWYWqj916z3pKEdM4W4+x41f+gJLbSA9Yvisn46mbZ74WEYFlFUwm+8qomlht6hvaDkupfWl4JRktcMP3PH6dnudH0kzUlxhBEymNROO+wT68ssNY5uFvaSpvqaOy+hrm2j5AFVmY9rTKZO1s3wJR1I/+NlEC0i+YSj/dMimeRvEv8E/0NgloTadbiNwxB9SQIzSr/pYpWT0cB8DP47TSubMwvP+z+vXqe1cvRttLYjVni2OpMODx8jbmPs46RsasJvwisevhVa3tY0wH2YW7TzXTsmmNj9YXhX86O7cdK0wbl0Lfw3BVze9kOVytS8f8Z8xhNQ4EMRWdDdCR/YNQjS9Dq73DxNlq8X+FZtjSfyNGUK8oq7lkrQax7lbCvplw4LUTj7lBZaYfUd5SFeA1ob6yfLEkWzDvEhtHC2NcnSV/S810kdzUSC2fTAa8GT032LmKiVU5tIgeyANzPK0luxPmTxbGTIA/3dsn1d5/hLk4NK0T8qrPbdgbMSU/X+L9qEGWca79FWAAAAAElFTkSuQmCC");
@@ -136,11 +136,11 @@ div.hr span::before {
   font-weight: bold;
 }
 
-.ampstart-headerbar a {
+.headerbar a {
   text-decoration: none;
 }
 
-.ampstart-headerbar a:hover {
+.headerbar a:hover {
   /* text-decoration: underline; */
   color: white;
   background-color: black;
