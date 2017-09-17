@@ -187,6 +187,11 @@ body.smackerels h2 > a {
   text-decoration: none;
 }
 
+::selection {
+  color: white;
+  background-color: black;
+}
+
 @media (--breakpoint-xs) {
   .headerbar {
     margin-bottom: 2rem;
