@@ -177,6 +177,9 @@ div.hr span::before {
   font-size: 2rem;
 }
 
+/* body.root article p {
+} */
+
 body.smackerels h2 > a {
   text-decoration: none;
 }
