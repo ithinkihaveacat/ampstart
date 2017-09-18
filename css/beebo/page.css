@@ -152,12 +152,6 @@ div.hr span::before {
   font-weight: bold;
 }
 
-.ampstart-btn-secondary {
-  color: var(--color-grey);
-  /* gm convert -size 200x50 'xc:#fdfdfd' step1.png ; and gm convert step1.png -random-threshold All '0x100' step2.png ; and gm convert step2.png -filter point -resize '100%' step3.png ; and base64 -i step3.png -o - | pbcopy */
-  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAAAyAQAAAAAxKqlMAAAAyElEQVQ4y62UQQ7EIAhFvblH8ygcgaULosxo1SpgnSZDGtPw+L9ItI6XCOXB+upYBpXFW6SHE8XMKbJ2o1WTLCuaNKqgEYKeyKqDvNF0y29faJK9ZkfQICjq86RJj25zQCVgMlcsfXOkeaqL2zKHi4TUasPd/8NO5VaItydEdSC1ydJc+3Ph6PZ3An2A1tzordsPJJ417cKM0eVB6IYtwtYNVgJjOXaN5TtgkKSTJeOFm+dxLF/PLVYSt5p8ctO33hvlqDpY/kgfn8TVxICK8QIAAAAASUVORK5CYII=");
-}
-
 .ampstart-pullquote {
   font-size: inherit;
   border-left-color: var(--color-disabled);
