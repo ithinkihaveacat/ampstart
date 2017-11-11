@@ -26,8 +26,18 @@ h1,h2,h3,h4,h5,h6,
   font-family: Inconsolata, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 }
 
+
+.ampstart-headerbar-nav > ul {
+  justify-content: flex-end;
+}
+
 .ampstart-headerbar-nav .ampstart-nav-item {
   padding-right: 1rem;
+}
+
+.ampstart-headerbar-nav .ampstart-nav-item a {
+  text-transform: uppercase;
+  font-size: var(--h5);
 }
 
 .ampstart-headerbar-nav .ampstart-nav-item.www-current-page {
@@ -110,9 +120,22 @@ body .www-secondary-nav-anchors .www-secondary-nav-anchor[option][selected] {
   outline: none;
 }
 
-.www-secondary-nav-anchor[selected]::after {
+.www-secondary-nav-anchor::after {
   content: '';
   display: block;
   height: 4px;
+  background: transparent;
+}
+
+.www-secondary-nav-anchor[selected]::after {
   background: var(--header-gradient);
+}
+
+/* SVG Gradient */
+#svg-gradient .start {
+  stop-color: var(--color-secondary);
+}
+
+#svg-gradient .stop {
+  stop-color: #066573;
 }

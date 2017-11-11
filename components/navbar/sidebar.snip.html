@@ -23,11 +23,22 @@ limitations under the License.
   </div>
   <nav class="ampstart-sidebar-nav ampstart-nav">
     <ul class="list-reset m0 p0 ampstart-label">
+      {{#sidebartitle}}
+        <li role="heading" class="ampstart-sidebar-nav-title">
+          {{title}}
+        </li>
+      {{/sidebartitle}}
       {{#sidebarimage}}
         <li>
+          {{#href}}
+          <a href="{{.}}" class="text-decoration-none block 22">
+          {{/href}}
           <amp-img src="{{{url}}}" width="{{width}}" height="{{height}}" layout="responsive" class="ampstart-sidebar-nav-image {{classes}}" alt="{{alt}}"{{#preloader}} noloading{{/preloader}}>
             {{#preloader}}<div placeholder class="{{classes}}"></div>{{/preloader}}
           </amp-img>
+          {{#href}}
+          </a>
+          {{/href}}
         </li>
       {{/sidebarimage}}
       {{#nav}}
