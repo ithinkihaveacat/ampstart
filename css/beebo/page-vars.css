@@ -20,7 +20,7 @@
 
   --color-font-default: #505050;
 
-  --font-family: "skolar-sans-latin", sans-serif;
+  --font-family: vollkorn, serif;
   --font-system: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
 
   --content-max-width: 32rem;
@@ -31,7 +31,7 @@
 
   /* css/ampstart-base/bass-override-vars.css */
 
-  --bold-font-weight: 800;
+  --bold-font-weight: 700;
 
   --h1: 2.5rem;
   --h2: 1.8rem;
@@ -47,5 +47,5 @@
   /* Other */
 
   --base-font-size: 20px;
-  --base-font-weight: 500;
+  --base-font-weight: 400;
 }
