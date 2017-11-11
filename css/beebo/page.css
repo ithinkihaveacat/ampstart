@@ -112,12 +112,12 @@ time {
 
 div.hr {
   color: var(--color-grey);
-  /* font-feature-settings: "dlig" 1; */
   font-size: 2rem;
 }
 
 div.hr span::before {
-  content: '*';
+  content: '-.-';
+  font-feature-settings: "dlig" 1;
 }
 
 .headerbar {
