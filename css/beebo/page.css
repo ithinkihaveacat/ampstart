@@ -116,8 +116,9 @@ div.hr {
 }
 
 div.hr span::before {
-  content: '-.-';
-  font-feature-settings: "dlig" 1;
+  content: '*';
+  /* content: '-.-'; */
+  /* font-feature-settings: "dlig" 1; */
 }
 
 .headerbar {
