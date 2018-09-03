@@ -134,9 +134,9 @@ limitations under the License.
     {{> ../../components/navbar/navbar.snip.html}}
 
     {{#land-see-hero}}
-    <section class="land-see-hero-container mx-auto mb3 max-width-4 relative overflow-hidden">
+    <section class="land-see-hero-container mx-auto mb3 relative overflow-hidden">
       {{#hero-carousel}}
-      <div class="{{layout-classes}} {{responsive-display-classes}}">
+      <div class="{{layout-classes}}">
         <amp-carousel
           id="{{id}}"
           class="{{classes}} mx-auto"
@@ -169,7 +169,7 @@ limitations under the License.
             <div class="land-see-hero-typography mx-auto center z2 {{post-classes}}">
               <a class="land-see-post-category land-see-page-navigation underline caps max-width-1 sm-hide md-hide lg-hide" href="{{post-category-url}}">{{post-category}}</a>
               <h1 class="land-see-hero-title ampstart-title-md"><a class="text-decoration-none" href="{{post-url}}">{{{post-title}}}</a></h1>
-              <p class="land-see-hero-caption ampstart-caption mx-auto max-width-2 pt1 mb3">
+              <p class="land-see-hero-caption ampstart-caption mx-auto max-width-3 pt1 mb3">
                 {{{post-copy}}}
               </p>
               <a class="land-see-hero-button text-decoration-none relative" href="{{post-url}}">Read More</a>
@@ -261,7 +261,7 @@ limitations under the License.
           {{/recent-stories}}
         </ul>
         {{#accent-animation}}
-        <div class="absolute z4 {{svg-image.classes}}">
+        <div class="absolute z4 xs-hide sm-hide {{svg-image.classes}}">
           <amp-position-observer
             on="scroll:recentAccentAnimation.seekTo(percent=event.percent)"
             layout="nodisplay">

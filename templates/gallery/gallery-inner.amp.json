@@ -1,5 +1,7 @@
 {
   "gallery": {
+    "tagline": "Gallery of Modern Art",
+    "hide-mobile": false,
     "head-tag": {
       "title": "Gallery Template",
       "canonical-path": "templates/gallery-inner.amp",
@@ -97,9 +99,9 @@
         }, {
           "width": 316,
           "height": 316,
-          "src": "../../img/gallery/plant.jpg",
-          "2x": "../../img/gallery/plant@2x.jpg",
-          "alt": "house plant on chair on yellow background"
+          "src": "../../img/gallery/spectrum.jpg",
+          "2x": "../../img/gallery/spectrum@2x.jpg",
+          "alt": "circles full of colour"
         }, {
           "width": 517,
           "height": 316,
@@ -113,8 +115,8 @@
           "2x": "../../img/gallery/hall@2x.jpg",
           "alt": "colourful hallway"
         }, {
-          "width": 233,
-          "height": 202,
+          "width": 364,
+          "height": 316,
           "src": "../../img/gallery/smoke.jpg",
           "2x": "../../img/gallery/smoke@2x.jpg",
           "alt" : "pink smoke"
@@ -125,17 +127,17 @@
     "otherExhibits": [{
       "width": 233,
       "height": 202,
-      "src": "../../img/gallery/plant.jpg",
-      "2x": "../../img/gallery/plant@2x.jpg",
-      "alt" : "house plant on a chair on a yellow background",
+      "src": "../../img/gallery/jellyfish.jpg",
+      "2x": "../../img/gallery/jellyfish@2x.jpg",
+      "alt" : "swimming jellyfish",
       "title": "Untitled",
       "artist": "Evan Ondre"
     }, {
       "width": 233,
       "height": 202,
-      "src": "../../img/gallery/smoke.jpg",
-      "2x": "../../img/gallery/smoke@2x.jpg",
-      "alt" : "pink smoke",
+      "src": "../../img/gallery/balloon.jpg",
+      "2x": "../../img/gallery/balloon@2x.jpg",
+      "alt" : "colourful hot air balloon",
       "title": "Cage",
       "artist": "Ellen Doe"
     }, {
@@ -155,8 +157,8 @@
         "text": "Buy Tickets"
       },
       "marker": {
-        "lat": 37.422,
-        "lng": -122.084
+        "lat": 40.7794406,
+        "lng": -73.9654327
       }
     }
   }

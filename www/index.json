@@ -1,7 +1,7 @@
 {
   "www-index": {
     "head-tag": {
-      "title": "AMP Start - Accelarated Mobile Pages Templates",
+      "title": "AMP Start - Accelerated Mobile Pages Templates",
       "canonical-path": "",
       "extensions": [
         "amp-sidebar",
@@ -10,7 +10,7 @@
         "amp-selector",
         "amp-analytics"
       ],
-      "css-path": "www/index/1.0/page.css",
+      "css-path": "www/index/page.css",
       "font-stylesheets": [
         "https://fonts.googleapis.com/css?family=Inconsolata|Montserrat"
       ],
@@ -18,99 +18,7 @@
         "href": "/img/www/amp_favicon.png"
       }
     },
-    "navbar": {
-      "logo": {
-        "url": "/img/www/amp_start_logo.svg",
-        "alt": "AMP start home logo",
-        "width": "119",
-        "height": "26",
-        "classes": "xs-hide sm-hide",
-        "href": "/"
-      },
-      "name": "The Blog",
-      "sidebar-id": "header-sidebar",
-      "nav": [
-        {
-          "link": {"url": "templates.html", "text": "Templates"}
-        },
-        {
-          "link": {"url": "components.html", "text": "Components"}
-        },
-        {
-          "link": {"url": "getstarted.html", "text": "Get Started"}
-        },
-        {
-          "link": {"url": "howitworks.html", "text": "How it works"}
-        },
-        {
-          "link": {"url": "https://www.ampproject.org/learn/about-amp/", "text": "What is AMP?", "target": "_blank"}
-        },
-        {
-          "link": {"url": "https://github.com/ampproject/ampstart", "text": "GitHub", "target": "_blank"}
-        }
-      ],
-      "social-follow": {
-        "links": [
-          {"twitter": "https://twitter.com/AMPhtml"},
-          {"github": "https://github.com/ampproject/ampstart"},
-          {"slack": "https://docs.google.com/forms/d/1wAE8w3K5preZnBkRk-MD1QkX8FmlRDxd_vs4bFSeJlQ/viewform?fbzx=4406980310789882877"},
-          {"wordpress": "https://amphtml.wordpress.com"}
-        ]
-      },
-      "sidebarimage": {
-        "url": "/img/www/amp_start_logo.svg",
-        "width": 119,
-        "height": 26,
-        "alt": "AMP start home logo",
-        "classes": "block col-6 mt2 mb4",
-        "href": "/"
-      }
-    },
-    "footer": {
-      "social-follow": {
-        "links": [
-          {"twitter": "https://twitter.com/AMPhtml"},
-          {"github": "https://github.com/ampproject/ampstart"},
-          {"slack": "https://docs.google.com/forms/d/1wAE8w3K5preZnBkRk-MD1QkX8FmlRDxd_vs4bFSeJlQ/viewform?fbzx=4406980310789882877"},
-          {"wordpress": "https://amphtml.wordpress.com"}
-        ]
-      },
-      "faq-links": {
-        "links": [
-          {"text": "Privacy", "url": "https://www.google.com/policies/privacy/", "target": "_blank"},
-          {"text": "License", "url": "https://github.com/ampproject/ampstart/blob/master/LICENSE", "target": "_blank"}
-        ]
-      },
-      "copyright": {
-        "text": "AMP Start is part of the Accelerated Mobile Pages Project"
-      }
-    },
     "features-showcase": [
-      {
-        "feature": {
-          "title": "Flexible",
-          "desc": "Modern designs that you can customize to suit your needs.",
-          "actions": [
-            {
-              "link": {"url": "templates.html", "text": "View templates"}
-            }
-          ],
-          "template-preview": {
-            "title": "The Scenic Template",
-            "img": {
-              "width": "1480",
-              "height": "1100",
-              "url": "/img/www/index/scenic_both.png",
-              "2x_url": "/img/www/index/scenic_both_2x.png",
-              "layout": "responsive",
-              "alt": "Screenshot of the scenic template"
-            },
-            "lightbox-id": "the-scenic-template",
-            "src": "templates/themes_1/template_1_article.amp.html",
-            "download": "archive/themes_1.zip"
-          }
-        }
-      },
       {
         "feature": {
           "title": "Responsive",
@@ -121,18 +29,43 @@
             }
           ],
           "template-preview": {
-            "title": "Lune Template",
+            "title": "Land+See Template",
             "img": {
               "width": "1480",
               "height": "1100",
-              "url": "/img/www/index/lune_both.png",
-              "2x_url": "/img/www/index/lune_both_2x.png",
+              "url": "/img/www/index/landsee_both.png",
+              "2x_url": "/img/www/index/landsee_both_2x.png",
               "layout": "responsive",
-              "alt": "Screenshot of the Lune template"
+              "alt": "Screenshot of the Land+See template"
             },
-            "lightbox-id": "lune",
-            "src": "templates/lune/lune.amp.html",
-            "download": "archive/lune.zip"
+            "lightbox-id": "land-see",
+            "src": "templates/land-see/land-see.amp.html",
+            "download": "archive/land-see.zip"
+          }
+        }
+      },
+      {
+        "feature": {
+          "title": "Flexible",
+          "desc": "Modern designs that you can customize to suit your needs.",
+          "actions": [
+            {
+              "link": {"url": "templates.html", "text": "View templates"}
+            }
+          ],
+          "template-preview": {
+            "title": "Travel Template",
+            "img": {
+              "width": "1280",
+              "height": "952",
+              "url": "/img/www/index/travel_both.png",
+              "2x_url": "/img/www/index/travel_both_2x.png",
+              "layout": "responsive",
+              "alt": "Screenshot of the travel template"
+            },
+            "lightbox-id": "travel-template",
+            "src": "templates/travel/travel.amp.html",
+            "download": "archive/travel.zip"
           }
         }
       },
@@ -146,18 +79,18 @@
             }
           ],
           "template-preview": {
-            "title": "Bike Shop Template",
+            "title": "Gallery Template",
             "img": {
-              "width": "1480",
-              "height": "1100",
-              "url": "/img/www/index/bike_both.png",
-              "2x_url": "/img/www/index/bike_both_2x.png",
+              "width": "1280",
+              "height": "952",
+              "url": "/img/www/index/gallery_both.png",
+              "2x_url": "/img/www/index/gallery_both_2x.png",
               "layout": "responsive",
-              "alt": "Screenshot of the Bike Shop template"
+              "alt": "Screenshot of the gallery template"
             },
-            "lightbox-id": "bike-shop",
-            "src": "templates/e-commerce/landing.amp.html",
-            "download": "archive/e-commerce.zip"
+            "lightbox-id": "the-gallery-template",
+            "src": "templates/gallery/gallery.amp.html",
+            "download": "archive/gallery.zip"
           }
         }
       }

@@ -79,7 +79,7 @@
   position: absolute;
   left: 0;
   right: 0;
-  height: 70vmax;
+  height: 95vmax;
   top: calc(70vmax - 300px);
   background-image: linear-gradient(180deg, transparent 0%, var(--color-black) 300px);
 }
@@ -159,6 +159,11 @@
   color: var(--color-gray);
   cursor: pointer;
   animation: fade-and-slideup 0.4s 0.45s ease-in-out both;
+}
+
+.travel-hero-discover svg {
+  display: block;
+  margin: 0 auto;
 }
 
 .travel-angles {

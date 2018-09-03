@@ -18,61 +18,31 @@
         "href": "/img/www/amp_favicon.png"
       }
     },
-    "navbar": {
-      "logo": {
-        "url": "/img/www/amp_start_logo.svg",
-        "alt": "AMP start home logo",
-        "width": "119",
-        "height": "26",
-        "classes": "xs-hide sm-hide",
-        "href": "/"
-      },
-      "name": "AMP Start",
-      "sidebar-id": "header-sidebar",
-      "nav": [
-        {
-          "link": {"url": "templates", "text": "Templates", "classes": "www-current-page"}
-        },
-        {
-          "link": {"url": "components.html", "text": "Components"}
-        },
-        {
-          "link": {"url": "getstarted.html", "text": "Get Started"}
-        },
-        {
-          "link": {"url": "howitworks.html", "text": "How it works"}
-        },
-        {
-          "link": {"url": "https://www.ampproject.org/learn/about-amp/", "text": "What is AMP?", "target": "_blank"}
-        },
-        {
-          "link": {"url": "https://github.com/ampproject/ampstart", "text": "GitHub", "target": "_blank"}
-        }
-      ],
-      "social-follow": {
-        "links": [
-          {"twitter": "https://twitter.com/AMPhtml"},
-          {"github": "https://github.com/ampproject/ampstart"},
-          {"slack": "https://docs.google.com/forms/d/1wAE8w3K5preZnBkRk-MD1QkX8FmlRDxd_vs4bFSeJlQ/viewform?fbzx=4406980310789882877"},
-          {"wordpress": "https://amphtml.wordpress.com"}
-        ]
-      },
-      "sidebarimage": {
-        "url": "/img/www/amp_start_logo.svg",
-        "width": 119,
-        "height": 26,
-        "alt": "AMP start home logo",
-        "classes": "block col-6 mt2 mb4",
-        "href": "/"
-      }
-    },
     "template-groups":[
       {
         "template-group": {
           "title": "E-commerce",
           "id": "commerce",
-          "template-count": "2",
+          "template-count": "3",
           "templates": [
+            {
+              "template-preview": {
+                "title": "Travel",
+                "page-count": "2",
+                "img": {
+                  "width": "360",
+                  "height": "640",
+                  "url": "/img/www/templates/travel.png",
+                  "2x_url": "/img/www/templates/travel_2x.png",
+                  "layout": "responsive",
+                  "alt": "Screenshot of the Travel template"
+                },
+                "desc": "A travel and experience focused site with extensive animations and e-commerce functionality.",
+                "lightbox-id": "travel-template",
+                "src": "templates/travel/travel.amp.html",
+                "download": "archive/travel.zip"
+              }
+            },
             {
               "template-preview": {
                 "title": "Bike Shop",
@@ -116,12 +86,12 @@
         "template-group": {
           "title": "News + Blog",
           "id": "news-blog",
-          "template-count": "3",
+          "template-count": "4",
           "templates": [
             {
               "template-preview": {
                 "title": "Simple Blog",
-                "page-count": "4",
+                "page-count": "1",
                 "img": {
                   "width": "360",
                   "height": "640",
@@ -139,7 +109,7 @@
             {
               "template-preview": {
                 "title": "Simple Article",
-                "page-count": "2",
+                "page-count": "1",
                 "img": {
                   "width": "360",
                   "height": "640",
@@ -156,8 +126,26 @@
             },
             {
               "template-preview": {
+                "title": "Land & See",
+                "page-count": "3",
+                "img": {
+                  "width": "360",
+                  "height": "640",
+                  "url": "/img/www/templates/landsee.png",
+                  "2x_url": "/img/www/templates/landsee_2x.png",
+                  "layout": "responsive",
+                  "alt": "Screenshot of the land+see blog template"
+                },
+                "desc": "An expressive magazine-style site, complete with stylistic animations, social elements, and page categories.",
+                "lightbox-id": "land-see-template",
+                "src": "templates/land-see/land-see.amp.html",
+                "download": "archive/land-see.zip"
+              }
+            },
+            {
+              "template-preview": {
                 "title": "The Scenic",
-                "page-count": "4",
+                "page-count": "1",
                 "img": {
                   "width": "360",
                   "height": "640",
@@ -170,6 +158,33 @@
                 "lightbox-id": "the-scenic-template",
                 "src": "templates/themes_1/template_1_article.amp.html",
                 "download": "archive/themes_1.zip"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "template-group": {
+          "title": "Art & Design",
+          "id": "art-and-design",
+          "template-count": "1",
+          "templates": [
+            {
+              "template-preview": {
+                "title": "Gallery",
+                "page-count": "2",
+                "img": {
+                  "width": "360",
+                  "height": "640",
+                  "url": "/img/www/templates/gallery.png",
+                  "2x_url": "/img/www/templates/gallery_2x.png",
+                  "layout": "responsive",
+                  "alt": "Screenshot of the the Gallery template"
+                },
+                "desc": "A contemporary and highly stylized showcase for creative content, images and event information.",
+                "lightbox-id": "museum-template",
+                "src": "templates/gallery/gallery.amp.html",
+                "download": "archive/gallery.zip"
               }
             }
           ]
@@ -202,25 +217,6 @@
           ]
         }
       }
-    ],
-    "footer": {
-      "social-follow": {
-        "links": [
-          {"twitter": "https://twitter.com/AMPhtml"},
-          {"github": "https://github.com/ampproject/ampstart"},
-          {"slack": "https://docs.google.com/forms/d/1wAE8w3K5preZnBkRk-MD1QkX8FmlRDxd_vs4bFSeJlQ/viewform?fbzx=4406980310789882877"},
-          {"wordpress": "https://amphtml.wordpress.com"}
-        ]
-      },
-      "faq-links": {
-        "links": [
-          {"text": "Privacy", "url": "https://www.google.com/policies/privacy/", "target": "_blank"},
-          {"text": "License", "url": "https://github.com/ampproject/ampstart/blob/master/LICENSE", "target": "_blank"}
-        ]
-      },
-      "copyright": {
-        "text": "AMP Start is part of the Accelerated Mobile Pages Project"
-      }
-    }
+    ]
   }
 }
